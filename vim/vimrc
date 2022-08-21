@@ -1,0 +1,66 @@
+""" Plugin management
+call plug#begin('~/.vim/plugged')
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'itchyny/lightline.vim'
+    Plug 'scrooloose/nerdtree'
+    Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+call plug#end()
+
+
+""" Autocommands
+"augroup Autocommands
+    " open NERDTree at startup
+    "autocmd VimEnter * NERDTree
+    "autocmd VimEnter * if argc() > 0 | wincmd l | endif
+"augroup END
+
+
+""" Settings
+colorscheme solarized
+set background=light
+set clipboard^=unnamedplus
+set cursorline
+set hlsearch ignorecase incsearch smartcase
+set laststatus=2 noshowmode
+set mouse=a
+set number
+set scrolloff=4
+set t_Co=256
+set ttimeoutlen=10
+set ttyfast
+set updatetime=500
+
+
+""" Plugins - Lightline
+let g:lightline = {'colorscheme': 'solarized'}
+
+
+""" Plugins - NERDTree
+let g:NERDTreeDirArrowExpandable = "\u002B"
+let g:NERDTreeDirArrowCollapsible = "\u2212"
+
+
+""" Plugins - YouCompleteMe
+" set the auto complete in normal text file
+" block it if only want auto complete in coding
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar': 1,
+      \ 'notes': 1,
+      \ 'markdown': 1,
+      \ 'netrw': 1,
+      \ 'unite': 1,
+      \ 'vimwiki': 1,
+      \ 'pandoc': 1,
+      \ 'infolog': 1,
+      \ 'leaderf': 1,
+      \ 'mail': 1
+      \}
+
+" set preview window
+"let g:ycm_add_preview_to_completeopt = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_complete_in_comments = 1
+"
+" stop popups
+let g:ycm_auto_hover = ""

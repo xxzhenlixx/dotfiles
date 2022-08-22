@@ -22,7 +22,6 @@ set clipboard^=unnamedplus
 set cursorline
 set hlsearch ignorecase incsearch smartcase
 set laststatus=2 noshowmode
-set mouse=a
 set number
 set scrolloff=4
 set t_Co=256
